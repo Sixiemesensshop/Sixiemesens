@@ -7,7 +7,7 @@
     <style>
         /* Supprime tout espace gris et met un fond blanc */
         html, body {
-            background-color: white;
+            background-color: fff8dc;
             margin: 0;
             padding: 0;
             width: 100%;
@@ -18,15 +18,36 @@
             align-items: center;
         }
 
-        /* L'image s'affiche au centre */
+        /* Conteneur pour gérer l’image */
+        .image-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Empêche tout dépassement */
+            background-color: #fffcf0;
+        }
+
+        /* L'image s’adapte sans être coupée */
         img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Garde les proportions sans découper */
+            max-width: 90vw;  /* Ne dépasse pas 90% de la largeur de l’écran */
+            max-height: 90vh; /* Ne dépasse pas 90% de la hauteur de l’écran */
+            object-fit: contain; /* Garde les proportions sans couper */
+        }
+
+        /* 📱 Ajustements pour mobile */
+        @media (max-width: 768px) {
+            img {
+                max-width: 95vw; /* Laisse plus d’espace sur petit écran */
+                max-height: 95vh;
+            }
         }
     </style>
 </head>
 <body>
-    <img src="5.png" alt="Affichage">
+    <div class="image-container">
+        <img src="5.png" alt="Affichage">
+    </div>
 </body>
 </html>
