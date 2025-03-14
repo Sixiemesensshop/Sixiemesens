@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afficher une page HTML</title>
+    <title>Affichage Image</title>
     <style>
-        /* Applique un fond blanc à l'ensemble de la page principale */
+        /* Supprime tout espace gris et met un fond blanc */
         html, body {
-            height: 100%;
+            background-color: white;
             margin: 0;
             padding: 0;
-            background-color: white; /* Fond blanc pour la page principale */
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Empêche le défilement */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* L'iframe occupe toute la largeur et la hauteur de la fenêtre */
-        iframe {
-            width: 100%;
-            height: 100vh; /* Utiliser 100vh pour la hauteur */
-            border: none; /* Supprime la bordure de l'iframe */
-            background-color: white; /* Fond blanc derrière l'iframe */
+        /* L'image s'affiche au centre */
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Garde les proportions sans découper */
         }
     </style>
 </head>
 <body>
-
-    <section>
-        <!-- L'iframe charge le fichier HTML -->
-        <iframe src="site.html"></iframe>
-    </section>
-
+    <img src="5.png" alt="Affichage">
 </body>
 </html>
